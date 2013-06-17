@@ -1,0 +1,43 @@
+// ###############
+// LAYOUT
+// ###############
+
+@import "baseproject/mixins/mixins";
+@import "vars";
+
+// WRAP
+.wrap{
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+// CONTENT
+.content{
+  width: 100%;
+  background-color: #ffffff;
+  padding: 2em 0;
+}
+
+// Main Colum
+.main-col{
+  width: 58%;
+  margin: 0 4% 0 0;
+  float: left;
+
+  @include border-box;
+}
+
+// SIDEBAR
+.main-sidebar{
+  width: 38%;
+  float: right;
+  @include border-box;
+  padding: 2em;
+
+  background-color: #F9F9F9;
+}
+
+// FOOTER
+footer{
+  display: block;
+}

@@ -1,0 +1,10 @@
+//************************************************************************//
+// Example: @include pf(border-radius, 5);
+//************************************************************************//
+@mixin pf($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}

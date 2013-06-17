@@ -1,0 +1,80 @@
+@import "../bourbon/bourbon";
+
+@import "pf";
+@import "border-radius";
+@import "border-box";
+@import "inline-block";
+@import "bg";
+@import "fonts";
+
+// Icons for the modules
+// Ejemplo: @include icons-mods('.icon');
+@mixin icons-mods($selector){
+  #{$selector}{
+    @include inline-block;
+
+    width: 22px;
+    height: 22px;
+
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+
+    background-image: asset-url("icons-mods-list.png", image);
+    background-repeat: no-repeat;
+  }
+
+  &.partnership #{$selector} { background-position: -198px 0 }
+  &.question    #{$selector} { background-position: -231px 0 }
+  &.favorite    #{$selector} { background-position: -100px 0 }
+  &.answer      #{$selector},
+  &.comment     #{$selector} { background-position: -66px 0 }
+  &.group       #{$selector} { background-position: -198px 0 }
+  &.like        #{$selector} { background-position: -132px 0 }
+}
+
+// Link with standar arrow. Supports zone-portal, zone-XXX
+// Example: @include arrow-go;
+// HTML:
+//  <div class="example-box zone-library">
+//    <span class="arrow-go"><a href="[link]]">[Invisible text 'go']</a></span>
+//  </div>
+//
+// CSS:
+//  .example-box{
+//    display:block;
+//    @include: arrow-go;
+//  }
+@mixin arrow-go{
+  .arrow-go a {
+    display: block;
+    float: right;
+    height: 40px;
+    width: 20px;
+
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &.zone-community .arrow-go a {
+    background-color: $community-color;
+    background-image: asset-url("arrow-gray.png", image);
+  }
+
+  &.zone-data_center .arrow-go a {
+    background-color: $data-center-color;
+    background-image: asset-url("arrow-gray.png", image);
+  }
+
+  &.zone-library .arrow-go a {
+    background-color: $library-color-3;
+    background-image: asset-url("arrow-gray.png", image);
+  }
+
+  &.zone-portal .arrow-go a {
+    background-color: $portal-color;
+    background-image: asset-url("arrow-gray.png", image);
+  }
+}
+

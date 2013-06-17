@@ -1,0 +1,98 @@
+@import "baseproject/mixins/mixins";
+@import "vars";
+
+div{@include border-box;}
+body{
+  background-color: white;
+  font: 100% Helvetica, "Lucida Grande", Lucida, Verdana, sans-serif;
+  line-height: 1.5em;
+  color: #424242;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1{
+  margin: 0 0 0.5em 0;
+  line-height: 1em;
+}
+h2{
+  margin: 0 0 0.5em 0;
+  line-height: 1em;
+}
+h3{
+  margin: 0 0 0.5em 0;
+  line-height: 1em;
+}
+h4{
+  margin: 0 0 0.5em 0;
+  line-height: 1em;
+}
+
+
+// Titulo principal
+.main-title{
+  width: 100%;
+  margin: 0 0 3em 0;
+
+  h3{ font-size: 1.9em; margin-bottom: .3em; color: $main-color; font-weight: bold; }
+  h4{ font-size: 1.6em; color: rgba(0, 0, 0, 0.8); font-weight: normal; font-style: normal; }
+}
+
+p{
+  margin: 0 0 1.5em 0;
+}
+
+.version{
+  position: absolute;
+  top: -36px;
+  right: 5%;
+
+  display: block;
+  width: 70px;
+  height: 70px;
+
+  padding: 0;
+  margin: 0;
+
+  line-height: 97px;
+  background-color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+
+body.buttons .buttons{
+  .bp-box-buttons{
+    border-bottom: 1px solid #E5E5E5;
+    padding: 1.5em 0;
+  }
+  code{
+    font-family: "Courier New";
+    color: $main-color;
+    font-weight: bold;
+  }
+}
+
+hr{
+  padding: 0;
+  margin: 1.5em 0;
+  border: none;
+  background-color: silver;
+  height: 1px;
+}
+
+// Code formating
+code{
+  &.css{
+    display: block;
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+    margin: 0 0 1.5em 0;
+    color: $main-color;
+  }
+}

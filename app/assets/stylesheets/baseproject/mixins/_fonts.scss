@@ -1,0 +1,23 @@
+// Fuentes
+@mixin font($font: null, $size: 11px){
+
+// Números
+  @if $font == numbers {
+    font-family: "BPdotsUnicaseDiamondRegular",'courier new', sans-serif;
+
+  // Negrita (destados)
+  } @else if $font == bold{
+    font-family: "SignikaRegular", Helvetica, Arial, sans-serif;
+    font-style: normal !important;
+
+  // Normal (por defecto)
+  } @else{
+    font-family: "SignikaLight", Helvetica, Arial, sans-serif;
+    strong {
+      font-family: "SignikaRegular", Helvetica, Arial, sans-serif;
+      font-style: normal;
+    }
+
+  }
+
+}

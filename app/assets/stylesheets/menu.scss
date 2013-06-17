@@ -1,0 +1,50 @@
+// #######
+// MENU
+// #######
+
+@import "vars";
+@import "baseproject/mixins/mixins";
+
+.main-menu {
+  width: 100%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.20);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+
+    li{
+      @include inline-block;
+      width: 20%;
+
+      a{
+        display: block;
+        padding: 1.5em 1.5em;
+        margin-right: 0px;
+
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+
+        border-left: 1px solid rgba(255, 255, 255, 0);
+        border-right: 1px solid rgba(255, 255, 255, 0);
+
+        &:hover{
+          border-left: 1px solid rgba(210, 210, 210, 0.1);
+          border-right: 1px solid rgba(210, 210, 210, 0.1);
+          background-color: rgba(0,0,0,0.05);
+
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+
+}
+

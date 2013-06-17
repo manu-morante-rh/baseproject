@@ -1,0 +1,7 @@
+// display inline block compatible IE7+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}

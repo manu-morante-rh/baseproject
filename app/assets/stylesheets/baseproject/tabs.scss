@@ -1,0 +1,73 @@
+// #######
+// TABS (into formtastic)
+// #######
+
+.formtastic .bp-tabs {
+  display:block;
+  float:left;
+  width: 100%;
+  margin-bottom: 10px;
+
+  ul.tabs-titles {
+    border-bottom: 1px solid silver;
+    border-left: 1px solid silver;
+    float: left;
+    list-style: none outside none;
+    margin: 0 0 10px;
+    padding: 0;
+    width: 100%;
+
+    li {
+      border-style: solid solid solid none;
+      border-width: 1px 1px 1px medium;
+      float: left;
+      width: auto;
+      height: 31px;
+      margin: 0 0 -1px;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      border-top: 1px solid silver;
+      border-right: 1px solid silver;
+      border-bottom: 1px solid silver;
+      border-left: medium none silver;
+      background-color: #f3f3f3;
+    }
+
+    a {
+      line-height: 31px;
+      border: 1px solid #FFFFFF;
+      color: gray;
+      display: block;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: normal;
+      outline: medium none;
+      padding: 0 10px;
+      text-decoration: none;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  ul.tabs-titles{
+    li.active,
+    li.active a:hover {
+      border-bottom: 1px solid #FFFFFF;
+      background: white 0 0;
+      height: 31px;
+    }
+    li.active a { color: black; }
+    li a:hover {
+      background: none repeat scroll 0 0 #FFFFFF;
+      border-bottom: 1px solid #FFFFFF;
+      color: black;
+    }
+  }
+
+  .bp-tab-content {
+    width: 100%;
+    display:block;
+    float:left;
+  }
+}

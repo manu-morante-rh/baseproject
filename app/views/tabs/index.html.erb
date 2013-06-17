@@ -1,0 +1,30 @@
+<% content_for :title do %>Tabs<% end %>
+<% content_for :subtitle do %>Tabs maecenas et nulla condimentum eros viverra sagittis.<% end %>
+
+<p>Fusce sed purus a erat facilisis vulputate at faucibus nibh. Maecenas quis ligula in elit mollis iaculis.</p>
+
+<%= semantic_form_for @film, :html=>{:multipart => true} do |f| %>
+
+    <%= f.inputs do %>
+
+        <%= bp_tabs(:id => 'sample', :titles => ['Tab 1', 'Tab 2'], :active => '') do %>
+
+            <%= bp_tab(:id => 'sample', :tab => '1') do %>
+
+                <p><strong>tab 1</strong></p>
+                <p>Cras eget purus quis magna tincidunt blandit. Sed et iaculis tortor, a mollis dui. Sed non dui eleifend, rhoncus augue vestibulum, tristique mauris. In hac habitasse platea dictumst. Sed imperdiet lacus ante, eget tempor lacus sollicitudin non. Vestibulum a iaculis est, sit amet commodo tellus. Vestibulum non tempus elit. Nulla aliquam nisl in orci tristique, sit amet placerat dolor vulputate. Duis pulvinar venenatis nibh, sit amet porttitor dui fringilla at. Nam at hendrerit lacus. Morbi vitae elit id ipsum lobortis adipiscing. Curabitur condimentum dolor ut nunc congue tempus. Fusce id erat at diam pretium accumsan vel quis turpis. In molestie mi quis nisl fermentum pellentesque.</p>
+
+            <% end %>
+
+            <%= bp_tab(:id => 'sample', :tab => '2') do %>
+
+                <p><strong>tab 2</strong></p>
+                <p>Donec nec est laoreet, bibendum magna in, aliquet lectus. Aenean scelerisque dapibus enim, non venenatis mi bibendum interdum. Nulla facilisi. Aenean pulvinar rhoncus rutrum. Mauris ac bibendum justo, condimentum sodales risus. Cras sit amet risus felis. Mauris egestas orci adipiscing turpis aliquam, vitae scelerisque tellus consectetur. Integer tincidunt rhoncus tellus, in consectetur quam elementum sed.</p>
+
+            <% end %>
+
+        <% end %>
+
+    <% end %>
+<% end %>
+
