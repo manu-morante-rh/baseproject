@@ -1,4 +1,3 @@
 == Welcome to Baseproject
 
-Baseproject es una colección de herramientas diseñadas espefíficamente para su
-uso en aplicaciones Rails.
+Baseproject is a collection of tools designed for use in Rails applications
