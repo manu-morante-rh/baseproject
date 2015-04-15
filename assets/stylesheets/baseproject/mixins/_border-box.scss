@@ -1,5 +1,0 @@
-@import "pf";
-
-@mixin border-box{
-  @include pf(box-sizing, border-box);
-}

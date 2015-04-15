@@ -1,4 +1,4 @@
-module Baseproject::BaseprojectHelper
+module Baseproject::BaseprojectHelpers
 
   # ::: body_class :::
   # ...................................................................................................
