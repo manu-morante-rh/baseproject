@@ -1,3 +1,0 @@
-== Welcome to Baseproject
-
-Baseproject is a collection of tools designed for use in Rails applications

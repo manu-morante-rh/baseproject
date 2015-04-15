@@ -1,0 +1,195 @@
+/****************
+  BUTTONS
+*****************/
+
+@import "baseproject/mixins/mixins";
+
+// Icons types
+// ************************************************************************************
+$icons: doc, money-ingots, ingot-plus, ingot, not-training, save, tactics, tickets, training, trash, money, sell-player;
+// ************************************************************************************
+
+
+@mixin release-bg           { background-color: #e0e0e0 }
+@mixin hover-bg             { background-color: #d0d0d0 }
+@mixin release-bg-green     { background-color: #008D00 }
+@mixin hover-bg-green       { background-color: #2CA52A }
+// Gradients
+//@mixin release-bg           { /*@include bg(#d3d1d1, #666666, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QzZDFkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2NjY2NjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');*/ }
+//@mixin hover-bg             { /*@include bg(#FDEE29, #FDBE4A, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZWUyOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGJlNGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');*/ }
+//@mixin release-bg-green     { /*@include bg(#00A800, #004817, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTgwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDQ4MTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+'); border: 1px solid #00A800;*/ }
+//@mixin hover-bg-green       { /*@include bg(#00F800, #004A18, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwZjgwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDRhMTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+'); border: 1px solid #00F800;*/ }
+
+.btn {
+  position:relative;
+  display: inline-table;
+  height: 30px;
+  vertical-align: top;
+
+  margin: 0 5px 15px 0;
+
+  // Icon tag is hidden initially
+  b{ display: none; }
+  .icon{ display: none; }
+
+  @include border-radius(3px);
+  @include release-bg;
+
+  a,
+  input{
+    display: table-cell;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0 14px 0 14px;
+
+    line-height: 12px;
+    vertical-align: middle;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include font(bold);
+    font-size: 12px;
+    color: #555;
+    background: asset-url('buttons/btn-gloss.png',image) no-repeat center top;
+    background-size: 100% 16px;
+
+    cursor: pointer;
+  }
+
+
+  // Verde
+  &.green{
+    @include release-bg-green;
+    a{ color: #ffffff }
+  }
+
+  // Sin mayúsculas (texto normal)
+  &.lower {
+    a, input{ text-transform: inherit; }
+  }
+
+  // HOVER
+  &:hover {
+
+    // Basico
+    @include hover-bg;
+    a { color: #333; }
+
+    // Verde
+    &.green{
+      @include hover-bg-green;
+      a { color: #ffffff; }
+    }
+
+    // DISABLED
+    &.disabled {
+      @include pf(opacity, 0.6);
+      @include release-bg;
+
+      &.green{ @include release-bg-green; }
+
+      a{ cursor: default; }
+    }
+
+  }
+
+  // DISABLED
+  &.disabled {
+    @include pf(opacity, 0.6);
+    @include release-bg;
+
+    &.green{ @include release-bg-green; }
+
+    a{ cursor: default; }
+  }
+
+  // BIG BUTTON / DOBLE LINEA
+  &.big,
+  &.double-line{
+    height: 40px;
+    a, input{
+      height: 40px;
+      padding: 0 20px;
+      background-size: 100% 25px;
+    }
+  }
+
+  // ANCHO FIJO
+  &.fix{
+    text-align: center;
+    width: 160px;
+
+    &.big{ width: 200px; }
+  }
+
+  // Rectification of height to borders
+  @each $c in green { &.#{$c} a{height: 28px;} }
+  &.big,
+  &.double-line{
+    @each $c in green { &.#{$c} a{height: 38px;} }
+  }
+
+
+  // ICONS
+  &.icon{
+    a{ padding-left:40px; }
+    i {
+      display: block;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      position:absolute;
+      top: 0;
+      left: 5px;
+    }
+    // Grande / Doble linea
+    &.big i,
+    &.double-line i{ top: 5px; }
+
+    // Derecha
+    &.icon-right{
+      a{
+        padding-left: 14px; // reset
+        padding-right:40px; }
+      i{
+        left: inherit; right: 5px; }
+    }
+  }
+
+  // Icons whith number (into body) (only for tag 'a' no 'input')
+  // html: <div class="btn"><b class="ingot">1</b></div>
+  a b{
+    @include inline-block;
+    height: 28px;
+
+    margin-left: 12px;
+    margin-right: -12px;
+
+    @include font(bold);
+    font-size: 13px;
+    line-height: 28px;
+
+    color: #ffffff;
+    &.white{color: #FFF}
+    &.black{color: #000}
+
+    &.ingot{ background: asset-url("icons/ingot.png",image) right 0 no-repeat; padding-right: 27px; }
+    &.money{ background: asset-url("icons/money.png",image) right 0 no-repeat; padding-right: 25px; }
+  }
+
+
+}
+
+// ************************************************************************************
+// Icons types
+// ************************************************************************************
+.btn.icon{
+  @each $icon in $icons {
+    &.#{$icon} i { background-image: asset-url("icons/#{$icon}.png",image);}
+  }
+}
+
+
