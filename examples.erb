@@ -1,49 +1,38 @@
-<% content_for :title do %>Buttons<% end %>
-<% content_for :subtitle do %>Buttons viverra consequat scelerisque in blandit, metus sit amet elementum.<% end %>
+<%= bp_buttons bp_button('Basic','#'), label: 'Basic <code>btn</code>' %>
 
-<p>Vestibulum id lorem tristique, tristique tortor in, ultrices diam. Ut dictum pretium vehicula. Suspendisse vestibulum vel nisi non dictum. In nec imperdiet lorem. Nunc mattis tristique neque, sit amet iaculis eros mollis id. Ut fringilla magna et faucibus tempor. Pellentesque tempor ac lectus vitae aliquet. Cras convallis, sapien sed placerat mattis, felis nisl eleifend arcu, vel lobortis nunc odio at ante. Donec suscipit ut urna id tristique. Aenean ullamcorper a nibh ut facilisis.</p>
+<%= bp_buttons label: 'Basic green <code>green</code>' do %>
+  <%= bp_button 'Green','#', class: 'green' %>
+  <%= bp_button 'It is a cool green button','#', class: 'green' %>
+<% end %>
 
+<%= bp_buttons label: 'Disabled <code>disabled</code>' do %>
+  <%= bp_button 'Off','#', class: 'disabled' %>
+  <%= bp_button 'Option not available currently','#', class: 'disabled green icon money' %>
+<% end %>
 
-  <div class="buttons">
+<%= bp_buttons label: 'Fixed width <code>fix</code> (predefined width)' do %>
+  <%= bp_button 'Fixed','#', class: 'fix' %>
+  <%= bp_button 'With fixed width','#', class: 'fix' %>
+<% end %>
 
+<%= bp_buttons label: 'Big <code>big</code>' do %>
+  <%= bp_button 'Big','#', class: 'big' %>
+  <%= bp_button 'Big buttons also fit','#', class: 'big' %>
+<% end %>
 
-    <%= bp_buttons bp_button('Basic','#'), label: 'Basic <code>btn</code>' %>
+<%= bp_buttons label: 'Big fixed width <code>big fix</code> (predefined width)' do %>
+  <%= bp_button 'Fixed','#', class: 'big fix' %>
+  <%= bp_button 'Big fixed width','#', class: 'big fix' %>
+<% end %>
 
-    <%= bp_buttons label: 'Basic green <code>green</code>' do %>
-        <%= bp_button 'Green','#', class: 'green' %>
-        <%= bp_button 'It is a cool green button','#', class: 'green' %>
-    <% end %>
+<%= bp_buttons label: 'Icons <code>icon [save | trash | green money]</code>' do %>
+  <%= bp_button 'Save','#', class: 'icon save' %>
+  <%= bp_button 'Delete','#', class: 'icon trash' %>
+  <%= bp_button 'Buy now','#', class: 'icon green money' %>
+<% end %>
 
-    <%= bp_buttons label: 'Disabled <code>disabled</code>' do %>
-        <%= bp_button 'Off','#', class: 'disabled' %>
-        <%= bp_button 'Option not available currently','#', class: 'disabled green icon money' %>
-    <% end %>
-
-    <%= bp_buttons label: 'Fixed width <code>fix</code> (predefined width)' do %>
-        <%= bp_button 'Fixed','#', class: 'fix' %>
-        <%= bp_button 'With fixed width','#', class: 'fix' %>
-    <% end %>
-
-    <%= bp_buttons label: 'Big <code>big</code>' do %>
-        <%= bp_button 'Big','#', class: 'big' %>
-        <%= bp_button 'Big buttons also fit','#', class: 'big' %>
-    <% end %>
-
-    <%= bp_buttons label: 'Big fixed width <code>big fix</code> (predefined width)' do %>
-        <%= bp_button 'Fixed','#', class: 'big fix' %>
-        <%= bp_button 'Big fixed width','#', class: 'big fix' %>
-    <% end %>
-
-    <%= bp_buttons label: 'Icons <code>icon [save | trash | green money]</code>' do %>
-        <%= bp_button 'Save','#', class: 'icon save' %>
-        <%= bp_button 'Delete','#', class: 'icon trash' %>
-        <%= bp_button 'Buy now','#', class: 'icon green money' %>
-    <% end %>
-
-    <%= bp_buttons label: 'Big width icons <code>big icon [save | trash | green money]</code>' do %>
-        <%= bp_button 'Save','#', class: 'big icon save' %>
-        <%= bp_button 'Delete','#', class: 'big icon trash' %>
-        <%= bp_button 'Buy now','#', class: 'big icon green money' %>
-    <% end %>
-
-  </div>
+<%= bp_buttons label: 'Big width icons <code>big icon [save | trash | green money]</code>' do %>
+  <%= bp_button 'Save','#', class: 'big icon save' %>
+  <%= bp_button 'Delete','#', class: 'big icon trash' %>
+  <%= bp_button 'Buy now','#', class: 'big icon green money' %>
+<% end %>
