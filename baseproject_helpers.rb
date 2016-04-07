@@ -2,22 +2,21 @@ module Baseproject::BaseprojectHelpers
 
   # ::: body_class :::
   # ...................................................................................................
-  # Esta rutina se colocará siempre en el BODY de todos los LAYOUT
-  # Ofrece información básica de estado de navegación:
-  # controller,
-  # controller-child_controller,
-  # controller-child_controller-action    - Ruta en base a los controladores y accion donde estamos
+  # Insert information classes in the BODY tag
+  # It provides basic information as:
+  #  - controller,
+  #  - controller-child_controller,
+  #  - controller-child_controller-action
   # logged-in                             - Cuando se está logado (con cualquier tipo de permiso)
-  # admin-logged-in                       - Cuando el usuario es el administrador
   def body_class
     class_body = "#{body_class_from_controller_path(controller_path)} #{body_class_from_controller_path(controller_path).split(" ").last}-#{action_name}"
     #class_body += " logged-in" if exists_current_user? || exists_current_admin?
     #class_body += " user-logged-in" if exists_current_user?
-    #class_body += " admin-logged-in" if exists_current_admin?
     class_body += " #{Rails.env}"
     class_body += " lang-#{I18n.locale.to_s}"
     class_body
   end
+
   def body_class_from_controller_path(path)
     body_class = ""
 
@@ -96,8 +95,7 @@ module Baseproject::BaseprojectHelpers
 
   # ::: bp_button :::
   # ...................................................................................................
-  # Boton general (para todos los botones)
-  # Admite clases: .last, .unmargin, .fixed, .default, .icon, .big
+  # Default button helper
   def bp_button(*args, &block)
     if block_given?
       options      = args.first || {}
@@ -120,8 +118,6 @@ module Baseproject::BaseprojectHelpers
 
   # ::: bp_submit :::
   # ...................................................................................................
-  # Boton submi general (para todos los botones)
-  # Admite clases: .last, .unmargin, .fixed, .default, .icon, .big
   def bp_submit(*args, &block)
     if block_given?
       "No admite &block"
@@ -356,121 +352,9 @@ def bp_mock_directory_index
   out.html_safe
 end
 
-# ---------------------------------------------------------------------------------------------------
-
-# Helper de la administracion
-
-# ---------------------------------------------------------------------------------------------------
-
-
-
-# ::: Main Menu :::
-# ---------------------------------------------------------------------------------------------------
-# Genera y controla el menu principal y sus submenus
-def admin_main_menu_item p
-  if p[:url].is_a?(Array)
-    urls = p[:url]
-  else
-    urls = [p[:url]]
-  end
-  #  Estado de ACTIVO
-  is_active = false
-  urls.each{|url| is_active=true if request.path.include?(url)}
-  if is_active
-    active = " class='active'"
-  else
-    active = ""
-  end
-
-  s = "<li#{active}>#{link_to(p[:title], urls.first, :class=>"main-menu-item", :id => p[:id])}"
-
-  # Submenu
-  if p[:submenu_items].present?
-
-    s += "<div class='main-submenu'><ol>"
-
-    p[:submenu_items].each do |submenu_item|
-
-      #  Estado de ACTIVO
-      if request.path.include?(submenu_item[:url])
-        active = " class='active'"
-      else
-        active = ""
-      end
-
-      s += "<li#{active}>"
-      s += link_to(submenu_item[:title], submenu_item[:url])
-      s += "</li>"
-    end
-
-    s += "</ol></div>"
-  else
-  end
-
-  s += "</li>"
-
-end
-
-# ::: bp_meta_tags  :::  # Revisado 31/05/2012
+# ::: bp_meta_tags  :::  #31/05/2012
 # ...................................................................................................
 # Add baseproject meta tags
 def bp_meta_tags
   "<meta name='base-project-version' content='#{bp_version}'>".html_safe
 end
-
-#############################################################################################################################
-# ::: Base Project Version :::
-# ...................................................................................................
-# Change log - Lista de cambios con explicacion de lo hecho e instrucciones para actualizar
-def bp_version
-  "0.6"
-  # 0.6
-  #         # 28/05/2012
-  #         - NUEVO helper para botones! bp_button, bp_send!...
-  #         - Rediseño de administracion. Con capacidades "responsive webdesign"
-  #         - Nuevo sistema de maquetas dinamicas "mocks". localhost:3000/mocks Muestra un arbol de directorios y archivos con todas las maquetas disponibles
-  #         - Ahora puedes ver la maqueta con o sin layout localhost:3000/mocks/no_layout/
-  # 0.5.2
-  #         # 31/05/2012
-  #         -  Helper bp_html_print. Se usa para pintar el HTML de todos los demsa helpers, de forma correcta
-  #         - Helper 'bp_meta_tags' para pintar la etiqueda meta de la version de proyecto base
-  #         # 21/05/2012
-  #         - Nuevo Helper "bp_custom_item" para items personalizados que mantengan la estrucutra en un formulario
-  # 0.5.1   - Refactor de todos los helper actuales a uso de "content_tag"
-  # 0.5
-  #         # 02/11/11
-  #         - Nuevo Helper para Grupos bp_group. Uso por agrupacion de codigo.
-  # 0.4.3   - Cambio de Helper inline. Renombrado de inline_inputs_form a bp_inline. Su uso es distinto, por agrupacion de codigo igual a bp_group.
-  #         - Helper para Tabs "bp_tabs" y "bp_tab". Ha cambiado el JavaScript. Se recomienda actualizar y cambiar el html de tabs antiguos por los
-  # 0.5.2   - Tabs BP_TABS
-  #         - Ahora es posible tener varios grupos de pestañas.
-  #         - Se ha creado la etiqueta meta-tag: <meta name="base-project-version" content="x.x.x">
-  #         - Se quita el texto "Version X.X.X" en la "admin"
-  # 0.5.1
-  #         # 25/10/11
-  #         - WYSIWYG. YUI Yahoo. rename: rich_text_editor => wysiwyg
-  # 0.5
-  #         - blueprint.css y formtastic.css se juntan en base-project.css.
-  # 0.4.2   - formtastic_herlper.rb y admin_helper.rb se juntan en base_project_helper.rb.
-  #         - formtastic.js se convierte en base-project.js
-  #         - BentonSansComp_Medium_500.font.js => BentonSansCond.font.js
-  #         - cufon-yui.js => cufon.js
-  #         - jquery.min.js => jquery.js
-  #         - jquery.ui.min.js => jquery.ui.js
-  #         - Eliminada limitacion en anchura min/max a los fieldset en admin_general.css
-  # 0.4
-  #         - Breadcrumb
-  # 0.3.1   - Helper body_class
-  # 0.3     - Grid de columnas
-  #         - Organizacion de archivos. Creacion de admin_helper.rb
-  # 0.2
-  #         - Helper controlador de estados de actibo automaticos por URL
-  #         - Diseño y estructura de submenu
-  #         - Menu con estados de activo por CSS
-  #         - Forms adaptables y titulos de vista
-  # 0.1
-  #         - Diseño liquido (flexible)
-  #         - Estructura
-end
-#############################################################################################################################
-
